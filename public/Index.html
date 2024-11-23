@@ -84,7 +84,7 @@
 <body>
     <div class="register-container">
         <h2>Create Account</h2>
-        <form onsubmit="submitForm(); return false;">
+        <form id="myForm" action="/register" method="post">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -103,12 +103,27 @@
             <p>Already have an account? <a href="login.html">Login here</a></p>
         </div>
     </div>
-    <!-- <script>
-        function submitForm() {
-            alert("Registration successful! Redirecting to login...");
-            window.location.href = "login.html";
+    <script>
+        // function submitForm() {
+        //     alert("Registration successful! Redirecting to login...");
+        //     window.location.href = "login.html";
              
-        }
-    </script> -->
+        // }
+
+        document.getElementById('myForm').addEventListener('submit', async function(event) 
+        {
+            event.preventDefault();
+
+            const formData = {
+                name : document.getElementById('name').value,
+                email : document.getElementById('email').value,
+                password : document.getElementById('password').value,
+                confirmpassword : document.getElementById('confrirmpassword').value
+            };
+
+            
+            
+        })
+    </script>
 </body>
 </html>
