@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require('body-parser');
 const app = express();
 const port  = process.env.PORT || 3000; //YE JO PROCESS WALI LINE HAI PORT KOI BHI ACCEPT KAR LEGI IF IT RUN ON ANOTHER MACHINE
 require("./db/conn");
@@ -13,7 +14,8 @@ const static_path = path.join(__dirname, "../public");
 app.use(express.static(static_path));
 
 app.use(express.json());
-app.use(express.urlencoded({extended:false})); 
+app.use(express.urlencoded({extended:false}));
+app.use(bodyParser.json()); 
 
 
 // Routing

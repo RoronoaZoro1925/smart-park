@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/smartPark",{
-    
-
-}).then(()=>{
+mongoose.connect("mongodb://localhost:27017/smartPark",{ }).then(()=>{
     console.log(`connection successful`);
 }).catch((e) =>{
     console.log(e);
 })
+
+const db = mongoose.connection;

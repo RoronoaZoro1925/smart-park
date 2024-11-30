@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const parkingSchema = new mongoose.Schema({
+const ParkingSchema = new mongoose.Schema({
     fullname : {
         type:String,
         required:true
@@ -20,6 +20,6 @@ const parkingSchema = new mongoose.Schema({
     }
 })
 
-const Register = new mongoose.model("Register", parkingSchema);
+const Register = new mongoose.model("Register", ParkingSchema);
 
 module.exports = Register;
